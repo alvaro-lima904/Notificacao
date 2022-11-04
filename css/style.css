@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&family=Mate&family=Poppins:wght@400;500;600&display=swap');
+
+:root{
+    --blue: #0079ff;
+    --darkblue: #0043ff;
+    --whiteblue: #0074ff;
+    --strongerblue: #0000ff;
+    --font: #5d7bff;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+hmtl, body{
+    height: 100vh;
+}
+
+body{
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background-color: black;
+}
+
+button{
+    padding: 8px 16px;
+    font-size: 25px;
+    background: var(--blue);
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 4px;
+}
+
+.alert{
+    background: var(--blue);
+    padding: 20px 40px;
+    min-width: 420px;
+    position: absolute;
+    right: 0px;
+    top: 10px;
+    border-radius: 4px;
+    border-left: 8px solid #ccf;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.alert.showAlert{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.alert.show{
+    animation: show_slide 1s ease forwards;
+}
+
+@keyframes show_slide{
+    0%{
+        transform: translateX(100%);
+    }
+    40%{
+        transform: translateX(-10%);
+    }
+    80%{
+        transform: translateX(0%);
+    }
+    100%{
+        transform: translateX(-10px);
+    }
+}
+
+.alert.hide{
+    animation: hide_slide 1s ease forwards;
+}
+
+@keyframes hide_slide{
+    0%{
+        transform: translateX(-10px);
+        
+    }
+    40%{
+        transform: translateX(0%);
+    }
+    80%{
+        transform: translateX(-10%);
+    }
+    100%{
+        transform: translateX(100%);
+    }
+}
+
+.alert .fa-exclamation-circle{
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ccf;
+    font-size: 30px;
+}
+
+.alert .msg{
+    padding: 0 20px;
+    color: 18px;
+    color: black;
+    font-weight: 500;
+}
+
+.alert .close-btn{
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    background-color: var(--whiteblue);
+    padding: 20px 18px;
+    cursor: pointer;
+    transform: translateY(-50%);
+}
+
+.alert .close-btn:hover{
+    
+    background: var(--darkblue);
+}
+
+.close-btn .fa-times{
+    color: #ccf;
+    font-size: 22px;
+    line-height: 40px;
+}
